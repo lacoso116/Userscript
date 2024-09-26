@@ -3,8 +3,10 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.3
 // @description  Adds a floating "Deselect All" button in the bottom right of the page
-// @author       LACO
-// @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action*
+// @author       Laco
+// @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action?*
+// @match        https://wfm-web.hkt.com/wfm/wm/JobBulkExchDPView.action?*
+// @match        https://wfm-web.hkt.com/wfm/rm/fieldschedule/FieldSchedule.action
 // @grant        none
 // @icon         https://uxwing.com/wp-content/themes/uxwing/download/animals-and-birds/cat-icon.png
 // ==/UserScript==
