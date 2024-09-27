@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Deselect All Checkboxes
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Adds a floating "Deselect All" button in the bottom right of the page
 // @author       Laco
 // @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action?*
@@ -23,7 +23,11 @@
     deselectAllButton.style.left = '20px';
     deselectAllButton.style.backgroundColor = '#6c757d';
     deselectAllButton.style.color = '#fff';
+    deselectAllButton.style.padding = '6px 12px';
     deselectAllButton.style.zIndex = '9999';
+    deselectAllButton.borderradius = '5px'; /* 設置 5px 的圓角 */
+
+
 
     // 添加事件監聽器,點擊後去除所有勾選框的選中狀態
     deselectAllButton.addEventListener('click', () => {
@@ -39,12 +43,13 @@
     // 添加一些樣式以確保按鈕在小屏幕上也能正常顯示
     const style = document.createElement('style');
     style.textContent = `
-        @media (max-width: 767px) {
+        @media (max-width: 367px) {
             .deselect-all-button {
                 bottom: 10px;
                 right: 10px;
                 font-size: 14px;
                 padding: 6px 12px;
+                border-radius: 16px;
             }
         }
     `;
