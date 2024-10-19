@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Select/Deselect All Buttons
+// @name         Select/Deselect All Buttons with Shortcut
 // @namespace    http://tampermonkey.net/
-// @version      0.8
-// @description  Adds floating "Select All" and "Deselect All" buttons
+// @version      0.9
+// @description  Adds floating "Select All" and "Deselect All" buttons with a "shift+d" shortcut
 // @author       Laco
 // @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action?*
 // @match        https://wfm-web.hkt.com/wfm/wm/JobBulkExchDPView.action?*
@@ -23,14 +23,25 @@
     selectDeselectAllButton.style.backgroundColor = '#007bff';
     selectDeselectAllButton.style.color = '#fff';
     selectDeselectAllButton.style.borderRadius = '5px';
-    selectDeselectAllButton.style.padding = '6px 12px';
+    selectDeselectAllButton.style.padding = '4.5px 12px';
     selectDeselectAllButton.style.fontSize = '16px';
     selectDeselectAllButton.style.zIndex = '9999';
 
     let allChecked = false;
     selectDeselectAllButton.textContent = 'Select All';
     selectDeselectAllButton.style.backgroundColor = '#007bff'; // 初始為藍色
-    selectDeselectAllButton.addEventListener('click', () => {
+    selectDeselectAllButton.addEventListener('click', toggleSelectAll);
+
+    document.body.appendChild(selectDeselectAllButton);
+
+    // 添加 "shift+d" 快捷鍵
+    document.addEventListener('keydown', (event) => {
+        if (event.shiftKey && event.key === 'd') {
+            toggleSelectAll();
+        }
+    });
+
+    function toggleSelectAll() {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
             checkbox.checked = !allChecked;
@@ -38,14 +49,11 @@
         allChecked = !allChecked;
         selectDeselectAllButton.textContent = allChecked ? 'Deselect All' : 'Select All';
         selectDeselectAllButton.style.backgroundColor = allChecked ? '#6c757d' : '#007bff'; // 切換按鈕顏色
-                selectDeselectAllButton.classList.add('flashing'); // 添加閃爍效果
+        selectDeselectAllButton.classList.add('flashing'); // 添加閃爍效果
         setTimeout(() => {
             selectDeselectAllButton.classList.remove('flashing'); // 0.5秒後移除閃爍效果
         }, 500);
-    });
-
-
-    document.body.appendChild(selectDeselectAllButton);
+    }
 
     // 添加閃爍效果的 CSS 樣式
     // 添加一些樣式以確保按鈕在小屏幕上也能正常顯示
@@ -64,7 +72,7 @@
                 bottom: 10px;
                 right: 10px;
                 font-size: 14px;
-                padding: 6px 12px;
+                padding: 4.5px 12px;
                 border-radius: 16px;
             }
         }
