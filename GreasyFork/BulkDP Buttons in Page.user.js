@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        BulkDP Buttons in Page
+// @name        BulkDP in Page 2.2
 // @namespace   https://example.com
 // @version     2.2
 // @description Open specific link in the current page
@@ -7,7 +7,7 @@
 // @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action?*
 // @grant       GM_addStyle
 // @grant       GM_xmlhttpRequest
-// @author       Laco
+// @author       LACO
 // @icon	     https://www.clipartmax.com/png/full/269-2695857_cat-icons-cat-face-icon-png.png
 // ==/UserScript==
 
@@ -23,7 +23,7 @@
         client_id: "fswfm",
         tab_id: "WkhG4wHk3w4",
         username: "01503275",
-        password: "Password0088"
+        password: "Password0089"
     };
 
     // 添加浮動按鈕的 CSS 樣式
@@ -34,7 +34,7 @@
             left: 140px;
             background-color: #4CAF50;
             color: white;
-            padding: 8px 16px;
+            padding: 7px 15px;
             border: none;
             cursor: pointer;
             z-index: 9999;
