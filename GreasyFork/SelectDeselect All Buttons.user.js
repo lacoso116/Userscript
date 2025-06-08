@@ -2,10 +2,8 @@
 // @name         Select/Deselect All Buttons with Shortcut
 // @namespace    http://tampermonkey.net/
 // @version      0.9
-// @description  Adds floating "Select All" and "Deselect All" buttons with a "shift+d" shortcut
+// @description  Adds floating "Select All" and "Deselect All" buttons with a "shift+d" shortcut on FieldSchedule
 // @author       Laco
-// @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action?*
-// @match        https://wfm-web.hkt.com/wfm/wm/JobBulkExchDPView.action?*
 // @match        https://wfm-web.hkt.com/wfm/rm/fieldschedule/FieldSchedule.action
 // @icon         https://cdn-icons-png.freepik.com/256/6988/6988878.png?semt=ais_hybrid
 // @grant        none
