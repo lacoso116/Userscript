@@ -22,7 +22,7 @@
     selectDeselectAllButton.style.color = '#fff';
     selectDeselectAllButton.style.borderRadius = '5px';
     selectDeselectAllButton.style.padding = '4.5px 12px';
-    selectDeselectAllButton.style.fontSize = '16px';
+    selectDeselectAllButton.style.fontSize = '15px';
     selectDeselectAllButton.style.zIndex = '9999';
 
     let allChecked = false;
