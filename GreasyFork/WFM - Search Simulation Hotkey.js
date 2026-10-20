@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         WFM - Search Simulation Hotkey
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Simulate search functionality when pressing Shift + S
+// @version      0.2
+// @description  Simulate search functionality when pressing Numpad Enter
 // @author       Laco
 // @match        https://wfm-web.hkt.com/wfm/wm/JobConsoleList.action*
 // @grant        none
+// @icon         https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/search-video-clip-icon.png
 // ==/UserScript==
 
 (function() {
@@ -27,9 +28,9 @@
     document.addEventListener('keydown', function(event) {
         const keyPressed = event.key.toUpperCase(); // Convert the pressed key to uppercase
 
-if (event.shiftKey && event.key.toLowerCase() === 's') {
+if (event.code === 'NumpadEnter') {
 
-            simulateSearch(); // Call the simulateSearch function when Shift + S is pressed
+            simulateSearch(); // Call the simulateSearch function when Numpad Enter is pressed
         }
     });
 })();
